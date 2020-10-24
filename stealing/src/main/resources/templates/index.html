@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Java 爬虫</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+</head>
+<style type="text/css">
+    body {
+        background-color: #008B8B;
+    }
+
+    td {
+        max-width: 300px;
+    }
+
+    img {
+        width: 270px;
+        height: 160px;
+    }
+
+    .Box {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+</style>
+<body>
+
+<!--<div>-->
+<!--    <p th:text="${msg}"></p>-->
+<!--</div>-->
+
+<!--<div th:each="item : ${Data}">-->
+<!--    <p th:text="${item.img}"></p>-->
+<!--    <p th:text="${item.title}"></p>-->
+<!--    <p th:text="${item.info}"></p>-->
+<!--    <p th:text="${item.date}"></p>-->
+<!--    <p th:text="${item.category}"></p>-->
+<!--</div>-->
+
+<!--<p th:text="${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd hh:mm:ss')}"></p>-->
+<!--<p th:text="${new java.util.Date().getSeconds()}"></p>-->
+
+<div class="ui container Box">
+    <div class="ui segment basic">
+        <div class="ui fluid input  animated bounceInDown">
+<!--            <form action="/stealing/index/" >-->
+                <input type="text" placeholder="搜索..." >&emsp;
+                <div class="ui animated fade button" tabindex="0">
+                    <div class="visible content">爬 取</div>
+                    <div class="hidden content"><a th:href="@{/stealing/myBlog}" href="#" style="color: dimgray">I m</a></div>
+                </div>&emsp;
+                <div class="ui animated fade button" tabindex="0">
+                    <div class="visible content">入 库</div>
+                    <div class="hidden content"><a th:href="@{/stealing/myBlog}" href="#" style="color: dimgray">Conson</a></div>
+                </div>&emsp;
+                <div class="ui animated fade button" tabindex="0">
+                    <div class="visible content">测 试1</div>
+                    <div class="hidden content"><a th:href="@{/stealing/myBlog}" href="#" style="color: dimgray">Conson</a></div>
+                </div>
+                <button class="ui button" type="submit">测 试 2</button>
+<!--            </form>-->
+        </div>
+        <br>
+        <div id="table-container" class="animated bounceInLeft">
+            <table th:each="item : ${Data}" class="ui  selectable inverted definition table ">
+                <thead></thead>
+                <tbody>
+                <tr>
+                    <td style="text-align: center">编号</td>
+                    <td th:text="${itemStat.index+1}">编号</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">标题</td>
+                    <td th:text="${item.title}"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">图片</td>
+                    <td><img src="" th:src="${item.img}" alt=""></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">描述</td>
+                    <td th:text="${item.info}"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">日期</td>
+                    <td th:text="${item.date}"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">分类</td>
+                    <td th:text="${item.category}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+</html>
